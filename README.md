@@ -29,4 +29,6 @@
 #### 9. JumpGame
   - Start from the second last and keep updating which is the index that you can safely reach. If you can reach 0 then you can return true, otherwise false
   - It means that  if (i + nums[i] >= lastGoodIndex) lastGoodIndex = i; // Update the last good index
-    
+#### 10. JumpGame MinJumps 🤯
+  - Start from 0, and update the i after calculating from a function.
+  - The function checks what is the max index you can reach from a given point in 1 single jump and updates the value of i and jumps. No. of function calls is the min no. of jumps.
