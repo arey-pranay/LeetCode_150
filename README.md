@@ -26,3 +26,7 @@
 #### 8. BuySell Multiple Stocks
   - Buy everyday
   - And only if there is a profit (bp < prices[i]), then sell it and add it to the total profit.
+#### 9. JumpGame
+  - Start from the second last and keep updating which is the index that you can safely reach. If you can reach 0 then you can return true, otherwise false
+  - It means that  if (i + nums[i] >= lastGoodIndex) lastGoodIndex = i; // Update the last good index
+    
