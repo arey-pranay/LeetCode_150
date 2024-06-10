@@ -17,3 +17,6 @@
 #### 5. Majority Element
   - Moore's Voting Algorithm. Initialize count and candidate with 0
   - Re-assign the candidate whenever count == 0. If match then count++ else count--.
+#### 6. Rotate Array
+  - Reverse the entire array
+  - Reverse from 0 to k, Reverse from k to nums.length
