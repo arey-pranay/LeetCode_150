@@ -14,3 +14,6 @@
 #### 4. Remove more than 2 Duplicates
   - Start from 1st index and compare with the current unique val
   - Use a seperate cond to 'set count and assign curr' and a separate cond to 'put values with count<2 at proper index and updating the index'
+#### 5. Majority Element
+  - Moore's Voting Algorithm. Initialize count and candidate with 0
+  - Re-assign the candidate whenever count == 0. If match then count++ else count--.
