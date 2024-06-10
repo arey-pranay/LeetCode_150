@@ -23,3 +23,6 @@
 #### 7. BuySellStock
   - Buy at first day, with initial profit =0
   - Update BP on lesser p[i] and update profit on greater p[i]-BP
+#### 8. BuySell Multiple Stocks
+  - Buy everyday
+  - And only if there is a profit (bp < prices[i]), then sell it and add it to the total profit.
