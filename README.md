@@ -8,3 +8,6 @@
 #### 2. Remove element
   - 2 pointer approach: 0,length
   - if matched, then swap
+#### 3. Remove Duplicate
+  - Keep track of non-duplicated index
+  - Keep putting the unique element in front
