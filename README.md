@@ -20,3 +20,6 @@
 #### 6. Rotate Array
   - Reverse the entire array
   - Reverse from 0 to k, Reverse from k to nums.length
+#### 7. BuySellStock
+  - Buy at first day, with initial profit =0
+  - Update BP on lesser p[i] and update profit on greater p[i]-BP
