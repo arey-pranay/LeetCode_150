@@ -32,3 +32,9 @@
 #### 10. JumpGame MinJumps 🤯
   - Start from 0, and update the i after calculating from a function.
   - The function checks what is the max index you can reach from a given point in 1 single jump and updates the value of i and jumps. No. of function calls is the min no. of jumps.
+#### 11. H-Index 🤯
+  - Sort Array. Go from start to end.
+  - If citations[n-i]<i then break and return
+#### 12. O(1) Insert, Remove and Random
+  - Create a Map (to store values with their positions) and a list (to get the numbers out). Insert: put(val,pos) , add(val) . Random: list.get(rand.nextInt(list.size()));
+  - Delete: pos = dict.get(val) , store lastEl , set(pos,lastEl) , put(lastEl, pos), map.remove(val) and remove last of list.
