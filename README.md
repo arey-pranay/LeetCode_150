@@ -38,3 +38,11 @@
 #### 12. O(1) Insert, Remove and Random
   - Create a Map (to store values with their positions) and a list (to get the numbers out). Insert: put(val,pos) , add(val) . Random: list.get(rand.nextInt(list.size()));
   - Delete: pos = dict.get(val) , store lastEl , set(pos,lastEl) , put(lastEl, pos), map.remove(val) and remove last of list.
+
+#### 13. Product Except Self
+  - Create new arrays for prefix product and suffix product. pre[i] = pre[i-1] * nums[i-1] ; suf[sz-i-1] = suf[sz-i] * nums[sz-i];
+  - And then multiply resp suffix sum to the prefix sum.             pre[i] *= suf[i];
+
+#### 14. Gas Station
+  - Calculate total gas and total cost. The thing is that if you can go from 2 to 8 and lose at 8. Then try starting from 9 and reaching 2 coz now yk that you can reach from 2 to 8 if you reach 2.
+  - total += gas[i] - cost[i];  if(total < 0) {total =0; res = i+1}
