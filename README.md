@@ -46,3 +46,24 @@
 #### 14. Gas Station
   - Calculate total gas and total cost. The thing is that if you can go from 2 to 8 and lose at 8. Then try starting from 9 and reaching 2 coz now yk that you can reach from 2 to 8 if you reach 2.
   - total += gas[i] - cost[i];  if(total < 0) {total =0; res = i+1}
+
+#### 15. Candy 😐
+
+#### 16. Trapping Rainwater 😐
+
+#### 17. RomanToInteger
+  - Start from last. Switch-Case from I to M. if(num<prev)ans-=num; else ans+=num; prev = num; 
+  - Because for normal numbers (without 4,9,40,90, etc.) the symbols are always in increasing order from L to R.
+
+#### 18. IntegerToRoman
+  - Create a string and keep appending  while (num >= 1000) { sb.append('M'); num -= 1000; } for  900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1.
+  - OR create 3 arrays for storing 0 to 9th value of ones, tens hundreds, and a seperae for ["","M","MM","MMM"]. return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];
+
+#### 19. Length of last word
+  - Start from last, keep going until you find a space, and keep incrementing the count and then return count on finding a space. (Remove the trailing spaces)
+  - OR convert the string to array by using .split(" ") and return the length of the string situated at the last index.
+
+#### 20. Length of longest common prefix
+  - Assume the first string is completely the prefix, and for each subseq string, until to get an indexOf the prefix, keep updating it by substring(-ing) it to 1 less char.
+  - When a match is found, compare the updated new prefix with the next String in the array. 
+
