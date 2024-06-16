@@ -9,55 +9,30 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int carry = 0; // carry ko store karne ke liye
-        ListNode head = null; // shuruaati node
-        ListNode tail = null; // last node
-        while(l1 != null || l2 != null)
-        {
-            int sum = 0; // dono node ke yog ko store karne ke liye
-            if(carry != 0)
-            {
-                sum += carry--; // carry ko ghatayein
-            } 
-            if(l1 != null)
-            {
-                sum += l1.val; // l1 ke value ko sum mein jodna
-                l1 = l1.next; // next node par move karein
+        int carry=0;
+        ListNode head= new ListNode(-1);
+        ListNode temp= head;
+        while(l1!= null || l2!= null || carry==1){
+            int sum=0;
+            if(l1!= null){
+                sum+= l1.val;
+                l1= l1.next;
             }
-
-            if(l2 != null)
-            {
-                sum += l2.val; // l2 ke value ko sum mein jodna
-                l2 = l2.next; // next node par move karein
+            if(l2!= null){
+                sum+= l2.val;
+                l2= l2.next;
             }
-
-            if(sum > 9)
-            {
-                sum -= 10; // carry nikalna
-                carry = 1; // carry ko set karein
-            }
-
-            ListNode temp = new ListNode(sum); // naya node banayein
-            if(tail != null)
-            {
-                tail.next = temp; // purane node ke next mein naya node set karein
-            }
-            else
-            {
-                head = temp; // agar ye pehli node hai, toh head ko set karein
-            }
-            
-            tail = temp; // tail ko update karein
+            sum+=carry;
+            carry= sum/10;
+            ListNode t= new ListNode(sum%10);
+            temp.next=t;
+            temp= temp.next;
         }
+        return head.next;
 
-        if(carry != 0)
-        {
-            tail.next = new ListNode(carry); // agar carry bacha hai, toh usko add karein
-        }
-        return head; // head node ko return karein
+        
     }
 }
-
 
 // import java.math.BigInteger;
 // class Solution {
