@@ -97,42 +97,76 @@
 
 
 
-class Solution {
-    int rows;
-    int cols;
-    int isLands = 0;
-    public int numIslands(char[][] grid) {
-        rows = grid.length;
-        cols = grid[0].length;
-        for(int row =0; row< rows; row++){
-            check(grid, row);
-        }
-        return isLands;
-    }
+// class Solution {
+//     int rows;
+//     int cols;
+//     int isLands = 0;
+//     public int numIslands(char[][] grid) {
+//         rows = grid.length;
+//         cols = grid[0].length;
+//         for(int row =0; row< rows; row++){
+//             check(grid, row);
+//         }
+//         return isLands;
+//     }
 
-    public void check(final char[][] grid,int row ){
-        final char[] finalRow = grid[row];
-        for(int col =0; col< cols; ++col){
-            if(finalRow[col] == '1'){
-                bfs(grid, row, col);
-                ++isLands;
+//     public void check(final char[][] grid,int row ){
+//         final char[] finalRow = grid[row];
+//         for(int col =0; col< cols; ++col){
+//             if(finalRow[col] == '1'){
+//                 bfs(grid, row, col);
+//                 ++isLands;
+//             }
+//         }
+//     }
+
+//     public void bfs(final char[][] grid,int row, int col){
+//         grid[row][col] = '2';
+//         if(row > 0 && grid[row-1][col] == '1'){
+//             bfs(grid, row-1, col);
+//         }
+//          if(row+1 < rows && grid[row+1][col] == '1'){
+//             bfs(grid, row+1, col);
+//         }
+//          if(col > 0 && grid[row][col - 1] == '1'){
+//             bfs(grid, row, col-1);
+//         }
+//          if( col + 1 < cols && grid[row][col+1] == '1'){
+//             bfs(grid, row, col+1);
+//         }
+//     }
+// }
+
+
+class Solution {
+    public int numIslands(char[][] grid) {
+        int m = grid.length, n = grid[0].length; // Record the number of rows and columns of the grid
+        int island_count = 0; // Counter for the number of islands
+        if (m == 0) {
+            return 0; // If the grid is empty, return 0 islands
+        }
+
+        // Use nested for loops to traverse the grid
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') { // If the cell is '1' (land)
+                    DFS(grid, i, j); // Use depth-first search to explore the island
+                    island_count++; // Increment the island count
+                }
             }
         }
+        return island_count; // Return the total number of islands
     }
 
-    public void bfs(final char[][] grid,int row, int col){
-        grid[row][col] = '2';
-        if(row > 0 && grid[row-1][col] == '1'){
-            bfs(grid, row-1, col);
+    private void DFS(char[][] grid, int i, int j) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] != '1') {
+            return; // If out of bounds or not on land, return
         }
-         if(row+1 < rows && grid[row+1][col] == '1'){
-            bfs(grid, row+1, col);
-        }
-         if(col > 0 && grid[row][col - 1] == '1'){
-            bfs(grid, row, col-1);
-        }
-         if( col + 1 < cols && grid[row][col+1] == '1'){
-            bfs(grid, row, col+1);
-        }
+        grid[i][j] = '0'; // Mark the current cell as visited by setting it to '0'
+
+        DFS(grid, i - 1, j); // Explore upward
+        DFS(grid, i + 1, j); // Explore downward
+        DFS(grid, i, j - 1); // Explore left
+        DFS(grid, i, j + 1); // Explore right
     }
 }
