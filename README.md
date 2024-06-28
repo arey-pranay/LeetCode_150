@@ -69,3 +69,13 @@
   - Assume the first string is completely the prefix, and for each subseq string, until to get an indexOf the prefix, keep updating it by substring(-ing) it to 1 less char.
   - When a match is found, compare the updated new prefix with the next String in the array. 
 
+#### 21. Reverse Words in a string
+  -  Start from last indx. Skip trailing spaces (i, last to spaces). Find the end of the current word (j, i to notSpaces).
+  -  Add all from j to i as a work in new array and then i = j-1.
+
+#### 22. ZigZag Conversion
+  - No real matrix, just imagine one. Go row-wise, for 1st and last row, increment is same as normal incr (, = 2 * (numRows - 1))
+  - Else, for rows in middle, keep adding the diagonal elements ( j += (inc - (2 * i)); ) and j+=2*i for the next element of the row with a complete column.
+
+#### 23. Index of first occurence in a string
+  - 
