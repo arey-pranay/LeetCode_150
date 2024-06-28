@@ -78,4 +78,14 @@
   - Else, for rows in middle, keep adding the diagonal elements ( j += (inc - (2 * i)); ) and j+=2*i for the next element of the row with a complete column.
 
 #### 23. Index of first occurence in a string
-  - 
+  - return haystack.indexOf(needle);
+  - OR i is no. of elements that we've traversed through the haystack before entering the check process, and j is np. of elements matched. haystack.charAt(i+j)==needle.charAt(j)
+
+#### 24. Text Justification 😐
+
+#### 25. Valid Palindrome
+
+#### 26. Is Subsequence
+
+#### 27. TwoSum - II (Input is sorted array)
+
