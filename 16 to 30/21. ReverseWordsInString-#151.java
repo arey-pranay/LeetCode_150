@@ -1,31 +1,68 @@
 class Solution {
     public String reverseWords(String s) {
-        ArrayList<String> a = new ArrayList<>();
-        boolean flag = false;
-        String curr = "";
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)==' ') flag = true;
-            else{
-                if(flag && s.charAt(i)!=' '){
-                    if(!curr.equals(""))a.add(curr);
-                    curr = "";
-                    curr+=s.charAt(i);
-                    flag = false;
-                } else {
-                    curr+=s.charAt(i);
-                }
+        char[] arr = s.toCharArray();
+        int n = arr.length;
+        StringBuilder res = new StringBuilder();
+        int i = n - 1;
+        
+        while (i >= 0) {
+            // Skip trailing spaces
+            while (i >= 0 && arr[i] == ' ') i--;
+            if (i < 0) break;
+
+            // Find the end of the current word
+            int j = i;
+            while (j >= 0 && arr[j] != ' ') j--;
+
+            // Append the word to the result
+            for (int k = j + 1; k <= i; k++) {
+                res.append(arr[k]);
             }
+
+            // Add a space after the word if it's not the last word
+            res.append(' ');
+
+            // Move to the next word
+            i = j - 1;
         }
-        a.add(curr);
-        String answer = "";
-        for(int i = a.size()-1;i>0;i--){
-            answer+=a.get(i);
-            answer+=" ";
+
+        // Remove the last added space if there is any
+        if (res.length() > 0) {
+            res.setLength(res.length() - 1);
         }
-        answer+=a.get(0);
-        return answer;
+
+        return res.toString();
     }
 }
+
+// class Solution {
+//     public String reverseWords(String s) {
+//         ArrayList<String> a = new ArrayList<>();
+//         boolean flag = false;
+//         String curr = "";
+//         for(int i=0;i<s.length();i++){
+//             if(s.charAt(i)==' ') flag = true;
+//             else{
+//                 if(flag && s.charAt(i)!=' '){
+//                     if(!curr.equals(""))a.add(curr);
+//                     curr = "";
+//                     curr+=s.charAt(i);
+//                     flag = false;
+//                 } else {
+//                     curr+=s.charAt(i);
+//                 }
+//             }
+//         }
+//         a.add(curr);
+//         String answer = "";
+//         for(int i = a.size()-1;i>0;i--){
+//             answer+=a.get(i);
+//             answer+=" ";
+//         }
+//         answer+=a.get(0);
+//         return answer;
+//     }
+// }
 // class Solution {
 //     public String reverseWords(String s) {
 //         // Convert the string to a character array for in-place modification
