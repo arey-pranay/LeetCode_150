@@ -1,7 +1,7 @@
 # LeetCode_150
 
 ## 1 to 15
-
+- ## Arrays / Strings
 #### 1. Merge Sorted Arrays
   - 3 pointer approach: m,n,m+n
   - Start from the last
@@ -83,9 +83,44 @@
 
 #### 24. Text Justification 😐
 
-#### 25. Valid Palindrome
+- ### Two Pointers
 
+#### 25. Valid Palindrome
+  - Convert to int and compare the left and right character while low < high. int left = s.charAt(low); 48 is 0 to 9, 65 is a to z, 97 is A to Z.
+  - If anything except those 3 conditions, then low++ or high--. Otherwise compare the integer values.
+    
 #### 26. Is Subsequence
+  - You have to find s in t as subsequence. initialize i&j =0. while(true) do j++ everytime. And do i++ only when characters match. 
+  - if i==s.length then return true. if j==t.length then return false. Otherwise keep iterting like this.
 
 #### 27. TwoSum - II (Input is sorted array)
+  - Start by adding first and last elements. If target is greater, then you need bigger number, so i++.
+  - If target is smaller, then you need smaller number, j--. Return when target is found.
 
+#### 28. Container with most water
+  - Start from extremes, and at every iteration, calculate minHeight of l and r. Then calculate and update maxArea by using minHeight*(r-l).
+  - while(arr[l] <= minHeight) l++ and same for right. Keep going while l<r.
+
+#### 29. Three Sum
+  - Sort the array. i=0. while(i<sz) j=i+1 and k=sz-1. while (j<k) if nums[i]+nums[j]+nums[k]==0 then add all of them to hashset.
+  - Else if >0 so you need a smaller number then k--. Else (sum<0 and you need a bigger number) then j++ is done.
+
+- ### Sliding Window
+
+#### 30. Minimum Size Subarray Sum
+  - Start from a window of length 1 with only the 0th element. Add next element by j++ and sum+=j. Whenever sum exceeds the target, do sum-=nums[i] and i++.
+  - Maintain a min that stores the minimum length of subarray by maintaining the value of j-i+1 whenever the target is found. astly just return min.
+
+## 31 to 45
+
+#### 31. Longest Substring without repeating characters
+  - Create a char to int hashmap of lastseen. Put start =0. Traverse from the 0th index and for each index if lastSeen.contains(s.charAt(i)).
+  - Then start = Math.max(start, lastSeen.get(currentChar) + 1); and then update the lastseen by putting s.charAt(i),i. And update maxLength = Math.max(maxLength, i-start+1)
+
+#### 32. Substring with concatenation of all words 😐
+
+#### 33. Minimum Window Substring 😐
+
+- ### Matrix ✨
+
+#### 34. 
