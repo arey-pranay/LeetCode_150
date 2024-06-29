@@ -83,7 +83,7 @@
 
 #### 24. Text Justification 😐
 
-- ### Two Pointers
+### <ins> Two Pointers </ins>
 
 #### 25. Valid Palindrome
   - Convert to int and compare the left and right character while low < high. int left = s.charAt(low); 48 is 0 to 9, 65 is a to z, 97 is A to Z.
@@ -105,7 +105,7 @@
   - Sort the array. i=0. while(i<sz) j=i+1 and k=sz-1. while (j<k) if nums[i]+nums[j]+nums[k]==0 then add all of them to hashset.
   - Else if >0 so you need a smaller number then k--. Else (sum<0 and you need a bigger number) then j++ is done.
 
-- ### Sliding Window
+### <ins> Sliding Window </ins>
 
 #### 30. Minimum Size Subarray Sum
   - Start from a window of length 1 with only the 0th element. Add next element by j++ and sum+=j. Whenever sum exceeds the target, do sum-=nums[i] and i++.
@@ -121,6 +121,8 @@
 
 #### 33. Minimum Window Substring 😐
 
-- ### Matrix ✨
+### <ins> Matrix ✨ </ins>
 
-#### 34. 
+#### 34. Valiid Sudoku 
+  - Use 3 n2 loops. One for checking the reptition in rows, one in columns and one in all bloacks internally only by sets logic, and O(1) checking/retriveal/insertion.
+  - For rows, use i = 0 to 3, j = 0 to 3, int row = 3 * (block / 3) + i; int col = 3 * (block % 3) + j; 
