@@ -125,4 +125,22 @@
 
 #### 34. Valiid Sudoku 
   - Use 3 n2 loops. One for checking the reptition in rows, one in columns and one in all bloacks internally only by sets logic, and O(1) checking/retriveal/insertion.
-  - For rows, use i = 0 to 3, j = 0 to 3, int row = 3 * (block / 3) + i; int col = 3 * (block % 3) + j; 
+  - For rows, use i = 0 to 3, j = 0 to 3, int row = 3 * (block / 3) + i; int col = 3 * (block % 3) + j;
+
+#### 35. Spiral Matrix
+  - Initially set top = 0, bottom = m - 1, left = 0, right = n - 1; Then traverse [top][i] from left to right and after that do top--. Then traverse [i][right] from top to bottom and then do right--.
+  - Similarly do this for [bottom][i] and [i][left] and also keep doing the full process while ans.size() <= m*n.
+
+#### 36. Rotate Image
+  - Transpose the matrix. 0 to n and i to n; matrix[i][j] =matrix[j][i];
+  - Reverse each row. 0 to n and 0 to n/2; matrix[i][j] =matrix[i][n-j-1];
+
+#### 37. Set Matrix Zeroes
+  - Store all the pairs of indices where you find zeroes, in an arraylist.
+  - Now traverse the arraylist and call setRowZero {matr[row][i] = 0;} and setColZero {matr[i][col] = 0;} for the given pair of indices.
+
+#### 38. Game Of Life
+  - Create a new matrix of same sizes and call the function on each pair of index, then put the obtained matrix values in the original matrix now.
+  - In the function, create 2D array of all i,j values of neightbours (8 values), count the alive neighbours and assign the value according to that and return the value.
+
+### <ins> HashMap </ins>
