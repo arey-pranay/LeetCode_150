@@ -1,7 +1,7 @@
 # LeetCode_150
 
 ## 1 to 15
-- ## Arrays / Strings
+### <ins> Arrays / Strings </ins>
 #### 1. Merge Sorted Arrays
   - 3 pointer approach: m,n,m+n
   - Start from the last
