@@ -144,3 +144,5 @@
   - In the function, create 2D array of all i,j values of neightbours (8 values), count the alive neighbours and assign the value according to that and return the value.
 
 ### <ins> HashMap </ins>
+### .
+
