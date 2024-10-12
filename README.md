@@ -144,5 +144,7 @@
   - In the function, create 2D array of all i,j values of neightbours (8 values), count the alive neighbours and assign the value according to that and return the value.
 
 ### <ins> HashMap </ins>
-### .
+### 39. Ransom Note
+  - Store occurences of each character from magazine, in a hashmap.
+  - Iterate through the ransomNote and if any character is not found in hashmap, or occurs < 0 then return false , else decrement the occ and at the end, only return true.
 
