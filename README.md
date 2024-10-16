@@ -144,7 +144,13 @@
   - In the function, create 2D array of all i,j values of neightbours (8 values), count the alive neighbours and assign the value according to that and return the value.
 
 ### <ins> HashMap </ins>
-### 39. Ransom Note
+#### 39. Ransom Note
   - Store occurences of each character from magazine, in a hashmap.
   - Iterate through the ransomNote and if any character is not found in hashmap, or occurs < 0 then return false , else decrement the occ and at the end, only return true.
+
+#### 40. Isomorphic Strings
+  - The isIsomorphic method checks if two strings are isomorphic by comparing their character mappings in both directions, using two HashMaps.
+  - If character mappings are consistent for all characters in both strings, it returns true; otherwise, it returns false.
+
+
 
